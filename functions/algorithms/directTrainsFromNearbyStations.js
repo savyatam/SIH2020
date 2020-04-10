@@ -21,8 +21,8 @@ module.exports = function(){
                  var destinationTrains = trainsVisitingStation.trains[destination];
                  for(trainNumber in originTrains)
                      {
-                     if(destinationTrains[trainNumber] !== undefined
-                     &&(parseInt(distance.trains[trainNumber][origin].distance,10) < parseInt(distance.trains[trainNumber][destination].distance,10)))
+                     if(destinationTrains !== undefined&&destinationTrains[trainNumber] !== undefined&&
+                     (parseInt(distance.trains[trainNumber][origin].distance,10) < parseInt(distance.trains[trainNumber][destination].distance,10)))
                         {
                         directTrains.push({origin:origin,destination:destination,number: trainNumber, name: trainNumberToName[trainNumber]});
                         }
